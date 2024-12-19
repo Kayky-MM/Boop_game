@@ -9,7 +9,7 @@
 #include <sys/types.h>
 #ifndef _WIN32
 #include <termios.h>
-#endif // _WIN32
+#endif
 
 
 //cor do jogador 1: 1
@@ -22,7 +22,7 @@ void colorir(int cor){
         SetConsoleTextAttribute(hConsole, cor);
     #else
         const char* cores[] = {
-        "\033[0m",  // Reset (Padrão)
+        "\033[0m",  // Reset (PadrÃ£o)
         "\033[0;34m", // Azul
         "\033[0;32m", // Verde
         "\033[0;36m", // Ciano
@@ -613,10 +613,10 @@ int main(){
     createSavesFolder(folder);
     if(verifySave()){
         char ans;
-        printf("\t\t    Há um jogo salvo:\n\n");
+        printf("\t\t    HÃ¡ um jogo salvo:\n\n");
         printSave();
         colorir(14);
-        printf("\n\n\t   Você deseja continuar? (digite s ou n) ");
+        printf("\n\n\t   VocÃª deseja continuar? (digite s ou n) ");
         ans = getchar();
         fflush(stdin);
         if(ans == 's'){
@@ -642,15 +642,15 @@ int main(){
         jogador == 1 ? colorir(1) : colorir(5);
         printf("\n\n\t  Player %i", jogador);
         colorir(14);
-        printf(", qual gato você quer colocar? ");
+        printf(", qual gato vocÃª quer colocar? ");
         scanf("%c", &gato);
         fflush(stdin);
         while((gato != 'm' && gato != 'M') || ((qnt[jogador-1]== 0 && gato=='m') || (qnt[jogador+1]==0 && gato == 'M' ))){
             if(gato != 'm' && gato != 'M'){
-                printf("    Esse tipo de gato não existe, escolha m ou M ");
+                printf("    Esse tipo de gato nÃ£o existe, escolha m ou M ");
             }
             if((qnt[jogador-1]== 0 && gato=='m') || (qnt[jogador+1]==0 && gato == 'M' )){
-                printf("    Você não tem mais gatos nesse estoque, escolha outro ");
+                printf("    VocÃª nÃ£o tem mais gatos nesse estoque, escolha outro ");
             }
             scanf("%c", &gato);
             fflush(stdin);
@@ -662,13 +662,13 @@ int main(){
     jogador == 1 ? colorir(1) : colorir(5);
     printf("    Player %i", jogador);
     colorir(14);
-    printf(", em quais coordenadas você deseja jogar? (x,y) ");
+    printf(", em quais coordenadas vocÃª deseja jogar? (x,y) ");
     gets(position);
     y = position[0] - 'a';
     x = position[1] - '0' - 1;
     fflush(stdin);
     while(x<0 || x>5 || y<0 || y>5 || jogo[x][y] != 0){
-        printf("    Coordenada inválida, insira outra... ");
+        printf("    Coordenada invÃ¡lida, insira outra... ");
         gets(position);
         y = position[0] - 'a';
         x = position[1] - '0' - 1;
