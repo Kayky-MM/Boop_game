@@ -14,8 +14,7 @@ Adaptação digital em linguagem C do jogo de tabuleiro "Boop"
 
   <h1>Versão digitalizada</h1>
 
-  A princípio, o usuário precisa apenas de uma IDE que compile e execute em linguagem C, tais como Code::Blocks, Dev-C++, Visual Studio Code entre outras. Após o download do arquivo main.c, basta compilar e executar no terminal.
-  Após a tela inicial o jogo incia com a vez do player 1.
+  Após o download do arquivo main.c, basta compilar e executar no terminal. Depois da tela inicial o jogo incia com a vez do player 1.
 
 ![tela inicial](./Pictures/picture3.png)
 
